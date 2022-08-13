@@ -7,4 +7,5 @@ class UnAuthenticatedError extends CustomApiError {
   }
 }
 
+
 module.exports = UnAuthenticatedError;
