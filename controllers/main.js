@@ -45,13 +45,3 @@ const dashboard = async (req, res) => {
 };
 
 module.exports = { login, dashboard };
-
-// --- Just for fun ----- //
-/*
-  luckyNumber = luckyNumber = luckyNumber.toString().split("2").join("two");
-  luckyNumber = luckyNumber.toString().split("3").join("three");
-  luckyNumber = luckyNumber.toString().split("5").join("five");
-  luckyNumber = luckyNumber.toString().split("7").join("seven");
-  luckyNumber = luckyNumber.toString().split("9").join("nine");
- 
-*/

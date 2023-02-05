@@ -1,12 +1,13 @@
 {
-  "name": "jobs",
+  "name": "kespa",
   "version": "1.0.0",
   "main": "app.js",
   "scripts": {
-    "start": "nodemon app.js"
+    "dev": "nodemon app.js",
+    "start": "node app.js"
   },
   "keywords": [],
-  "author": "",
+  "author": "Bilal Amjad",
   "license": "ISC",
   "dependencies": {
     "dotenv": "^8.2.0",

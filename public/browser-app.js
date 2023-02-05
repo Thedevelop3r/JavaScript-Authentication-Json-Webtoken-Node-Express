@@ -15,6 +15,7 @@ formDOM.addEventListener("submit", async (e) => {
   const password = passwordInputDOM.value;
 
   try {
+    tokenDOM.textContent = "authorizing......";
     const { data } = await axios.post("/api/v1/login", { username, password });
 
     formAlertDOM.style.display = "block";
@@ -26,19 +27,22 @@ formDOM.addEventListener("submit", async (e) => {
 
     localStorage.setItem("token", data.token);
     resultDOM.innerHTML = "";
-    tokenDOM.textContent = "token present";
+    tokenDOM.textContent = "authenticated";
     tokenDOM.classList.add("text-success");
   } catch (error) {
     formAlertDOM.style.display = "block";
     formAlertDOM.textContent = error.response.data.msg;
     localStorage.removeItem("token");
     resultDOM.innerHTML = "";
-    tokenDOM.textContent = "no token present";
+    tokenDOM.textContent = "Unathorized";
     tokenDOM.classList.remove("text-success");
   }
   setTimeout(() => {
     formAlertDOM.style.display = "none";
   }, 2000);
+
+  usernameInputDOM.value = "";
+  passwordInputDOM.value = "";
 });
 
 btnDOM.addEventListener("click", async () => {
